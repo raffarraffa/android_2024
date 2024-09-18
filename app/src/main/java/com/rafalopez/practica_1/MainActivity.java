@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
-
+/* Usando referencias en la vista */
 public class MainActivity extends AppCompatActivity {
 
     @Override
