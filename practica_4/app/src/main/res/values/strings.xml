@@ -10,6 +10,6 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_listar">Listar Tareas</string>
-    <string name="menu_agregar">Agregar Tarea</string>
+    <string name="menu_cargar">Agregar Tarea</string>
     <string name="menu_salir">Salir</string>
 </resources>

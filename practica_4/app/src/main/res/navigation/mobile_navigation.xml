@@ -13,14 +13,14 @@
 
     <fragment
         android:id="@+id/nav_cargar"
-        android:name="com.rafalopez.recilerview2.ui.gallery.GalleryFragment"
-        android:label="@string/menu_agregar"
+        android:name="com.rafalopez.recilerview2.ui.cargar.CargarFragment"
+        android:label="@string/menu_cargar"
         tools:layout="@layout/fragment_cargar" />
 
     <fragment
         android:id="@+id/nav_salir"
-        android:name="com.rafalopez.recilerview2.ui.home.HomeFragment"
-        android:label="@string/menu_agregar"
+        android:name="com.rafalopez.recilerview2.ui.salir.SalirFragment"
+        android:label="@string/menu_salir"
         tools:layout="@layout/fragment_salir" />
 
 </navigation>
