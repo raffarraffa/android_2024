@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/side_nav_bar"
+    android:background="#7ed0ec"
+    android:backgroundTintMode="add"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -12,24 +14,40 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/nav_header_desc"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#7ed0ec"
+        android:backgroundTint="#7ed0ec"
+
+        app:cardCornerRadius="12dp"
+        app:cardElevation="7dp"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="5dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:contentDescription="@string/nav_header_desc"
+            android:padding="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/app_icon"
+            tools:srcCompat="@drawable/app_icon" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/nav_header_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#0520EA"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nav_header_subtitle" />
 </LinearLayout>
