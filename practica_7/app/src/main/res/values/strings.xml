@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TPO 4</string>
+    <!--    Strings main_activity.xml-->
+    <string name="app_title">Explorador de Farmacias</string>
+    <string name="inputUser">Ingrese su Usuario</string>
+    <string name="inputPass">Ingrese su password</string>
+    <string name="btnLogin">Ingresar</string>
+</resources>
