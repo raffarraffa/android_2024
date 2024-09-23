@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         farmacias.add(new Farmacia("Pirulo","Illia 256", -33.280576,-66.332482 , "L-D 8:00 24:00",
-                R.drawable.ic_menu_camera ));
+                R.drawable.pirulo ));
 
         farmacias.add(new Farmacia("Pirulo1","Illia 256", -33.180576,-66.232482 , "L-D 8:00 24:00",
-                R.drawable.ic_menu_camera ));
+                R.drawable.pirulo1 ));
         farmacias.add(new Farmacia("Pirulo2","Illia 256", -33.480576,-66.132482 , "L-D 8:00 24:00",
-                R.drawable.ic_menu_camera ));
+                R.drawable.pirulo2));
 
         super.onCreate(savedInstanceState);
         // instancio viewmodel
