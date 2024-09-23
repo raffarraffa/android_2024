@@ -10,7 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 
 public class MainActivityViewModel extends AndroidViewModel {
     private User usuario = new User("admin@admin.com", "1234");
-   // private MutableLiveData<Boolean> mutAuth ;
+    private MutableLiveData<Boolean> mutAuth ;
     private MutableLiveData<Boolean> mutExit ;
 
     public MainActivityViewModel(@NonNull Application application) {
@@ -51,6 +51,11 @@ public class MainActivityViewModel extends AndroidViewModel {
             Intent intent = new Intent(getApplication(),FarmaciasActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getApplication().startActivity(intent);
+        }else{
+            Toast.makeText(getApplication(), "Error de autenticacion",
+                    Toast.LENGTH_SHORT).show();
+
+
         }
 
 
