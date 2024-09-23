@@ -1,4 +1,4 @@
-package com.rafalopez.examen_2.ui.home;
+package com.rafalopez.examen_2.ui.list;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,20 +12,20 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.rafalopez.examen_2.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
+public class ListFragment extends Fragment {
 
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        ListViewModel listViewModel =
+                new ViewModelProvider(this).get(ListViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        listViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
