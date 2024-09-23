@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TPO 4</string>
     <!--    Strings main_activity.xml-->
-    <string name="app_title">Explorador de Farmacias</string>
+    <string name="app_title">Farmacias Puntanas</string>
     <string name="inputUser">user@mail</string>
     <string name="inputPass">Ingrese su password</string>
     <string name="btnLogin">Ingresar</string>
@@ -15,4 +15,5 @@
     <string name="menu_home">Lista Farmacias</string>
     <string name="menu_gallery">Mapa Farmacias</string>
     <string name="menu_slideshow">Salir</string>
+    <string name="menu_detail">Detalle Farmacia</string>
 </resources>

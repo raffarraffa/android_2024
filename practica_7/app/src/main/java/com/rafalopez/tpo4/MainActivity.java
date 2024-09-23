@@ -28,18 +28,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        farmacias.add(new Farmacia("Pirulo","Illia 256", -33.280576,-66.332482 , "L-D 8:00 24:00",
-                R.drawable.pirulo ));
+        farmacias.add(new Farmacia("Pirulo","Illia 256", -33.280576,-66.332482 , "L-D 8:00 24:00",  R.drawable.pirulo ));
 
-        farmacias.add(new Farmacia("Pirulo1","Illia 256", -33.180576,-66.232482 , "L-D 8:00 24:00",
-                R.drawable.pirulo1 ));
-        farmacias.add(new Farmacia("Pirulo2","Illia 256", -33.480576,-66.132482 , "L-D 8:00 24:00",
-                R.drawable.pirulo2));
+        farmacias.add(new Farmacia("Pirulo1","Illia 256", -33.180576,-66.232482 , "L-D 8:00 24:00", R.drawable.pirulo1 ));
+        farmacias.add(new Farmacia("Pirulo2","Illia 256", -33.480576,-66.132482 , "L-D 8:00 24:00",  R.drawable.pirulo2));
+        farmacias.add(new Farmacia("Pirulo3","Junin 345", -33.190576,-66.342482 , "L-D 8:00 24:00",  R.drawable.pirulo1 ));
+        farmacias.add(new Farmacia("Pirulo4","San Martin 1356", -33.380576,-66.232482 , "L-D 8:00 24:00",  R.drawable.pirulo2));
 
         super.onCreate(savedInstanceState);
         // instancio viewmodel
         mainViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainActivityViewModel.class);
 //        // observer del auth
+  /*
         mainViewModel.getAuth().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean authBoolean) {
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+   */
         // instancio binding
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         // cambiar el atributo de setContentView
