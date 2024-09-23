@@ -44,25 +44,3 @@ public class GalleryFragment extends Fragment {
         return root;
     }
 }
-
-
-//public class GalleryFragment extends FragmentActivity {
-//    private GalleryViewModel mv;
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        mv =
-//                ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(GalleryViewModel.class);
-//        mv.getMapaActual().observe(this, new Observer<GalleryViewModel.MapaActual>() {
-//            @Override
-//            public void onChanged(GalleryViewModel.MapaActual mapaActual) {
-//                ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map)).getMapAsync(mapaActual);
-//            }
-//        });
-//        mv.obtenerMapa();
-//    }
-//
-//
-//
-//}
