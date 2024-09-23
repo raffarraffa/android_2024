@@ -83,7 +83,7 @@ public class GalleryViewModel extends AndroidViewModel {
 //                            .build();
 //
 //            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(posActual, 7));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(posActual, 10));
             if (posActual != null) {
                 googleMap.addMarker(new MarkerOptions().position(posActual).title("Posicion Actual"));
                 Log.d("mapa", "Ubicación obtenida 89: " + posActual);
