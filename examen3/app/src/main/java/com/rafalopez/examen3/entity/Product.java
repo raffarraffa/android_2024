@@ -1,6 +1,8 @@
 package com.rafalopez.examen3.entity;
 
-public class Product implements Comparable<Product>{
+import java.io.Serializable;
+
+public class Product implements Serializable, Comparable<Product>{
     private String code;
     private String desciption;
     private int stock;
