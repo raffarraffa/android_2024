@@ -1,5 +1,7 @@
 package com.rafalopez.tpo4;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -32,9 +34,9 @@ public class FarmaciasActivity extends AppCompatActivity {
         binding.appBarFarmacias.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
-                        .setAnchorView(R.id.fab).show();
+                exitDialog("Farmacias Puntanas", "Esta por salir de la aplicacion \n " +
+                        "confirme  para  hacerlo? ");
+
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -42,7 +44,7 @@ public class FarmaciasActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_farmacias);
@@ -63,4 +65,24 @@ public class FarmaciasActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+private void exitDialog(String title, String mesage ){
+        new AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage(mesage)
+                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finishAffinity();
+
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .show();
+
+        }
 }

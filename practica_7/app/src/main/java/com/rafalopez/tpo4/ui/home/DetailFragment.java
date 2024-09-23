@@ -35,8 +35,6 @@ public class DetailFragment extends Fragment {
             }
         });
         mv.getDetailFarmacia(getArguments());
-
-
         return binding.getRoot();
     }
 }

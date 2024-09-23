@@ -10,16 +10,24 @@ import androidx.lifecycle.MutableLiveData;
 
 public class MainActivityViewModel extends AndroidViewModel {
     private User usuario = new User("admin@admin.com", "1234");
-    private MutableLiveData<Boolean> mutAuth ;
+   // private MutableLiveData<Boolean> mutAuth ;
+    private MutableLiveData<Boolean> mutExit ;
 
     public MainActivityViewModel(@NonNull Application application) {
         super(application);
     }
-    public MutableLiveData<Boolean> getAuth(){
-        if(mutAuth == null){
-            mutAuth = new MutableLiveData<>(false);
+//    public MutableLiveData<Boolean> getAuth(){
+//        if(mutAuth == null){
+//            mutAuth = new MutableLiveData<>(false);
+//        }
+//        return mutAuth;
+//    }
+    public MutableLiveData<Boolean> getExit(){
+
+        if(mutExit == null){
+            mutExit = new MutableLiveData<>(false);
         }
-        return mutAuth;
+        return mutExit;
     }
 
     public void isValidUser(String user, String pass){
@@ -38,7 +46,8 @@ public class MainActivityViewModel extends AndroidViewModel {
 
         if(pass.equalsIgnoreCase(usuario.password) && user.equalsIgnoreCase(usuario.user)){
             // pasar al otro activity
-            mutAuth.setValue(true);
+         //   mutAuth.setValue(true);
+            Toast.makeText(getApplication(), "Usuario Autenticado", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplication(),FarmaciasActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getApplication().startActivity(intent);
@@ -59,4 +68,5 @@ public class MainActivityViewModel extends AndroidViewModel {
             this.password = password;
         }
     }
+
 }

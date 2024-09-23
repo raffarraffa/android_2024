@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
@@ -39,9 +40,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         //DetailViewModel dVm =       new ViewModelProvider((FragmentActivity) context).get(DetailViewModel.class);
 
         Farmacia farmacia = farmacias.get(position);
-        holder.titleFarmacia.setText(farmacia.getTitle());
-        holder.dirFarmacia.setText(farmacia.getDir());
-        holder.btnDetail.setOnClickListener(new View.OnClickListener() {
+        holder.titleFarmacia.setText("Farmacia: " + farmacia.getTitle());
+        holder.dirFarmacia.setText("Direccion: " + farmacia.getDir());
+        holder.farmaciaDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle= new Bundle();
@@ -59,12 +60,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView titleFarmacia;
         TextView dirFarmacia;
-        Button btnDetail;
+        CardView farmaciaDetail;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             titleFarmacia = itemView.findViewById(R.id.titleFarmacia);
             dirFarmacia = itemView.findViewById(R.id.dirFarmacia);
-            btnDetail = itemView.findViewById(R.id.btnDetail);
+            farmaciaDetail = itemView.findViewById(R.id.farmaciaDetail);
         }
     }
 }
