@@ -1,5 +1,12 @@
 package com.rafalopez.tpo4.ui.gallery;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
+import static androidx.core.content.PermissionChecker.checkSelfPermission;
+
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +33,8 @@ public class GalleryFragment extends Fragment {
 
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        mv.requestLocationUpdates();
+
 
 
         mv.getMapaActual().observe(getViewLifecycleOwner(), new Observer<GalleryViewModel.MapaActual>() {
@@ -39,8 +48,9 @@ public class GalleryFragment extends Fragment {
                     }
             }
         });
-        mv.obtenerMapa();
+       // mv.obtenerMapa();
 
         return root;
     }
+
 }
