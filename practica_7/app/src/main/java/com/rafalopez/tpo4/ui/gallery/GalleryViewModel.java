@@ -25,6 +25,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -85,10 +86,12 @@ public class GalleryViewModel extends AndroidViewModel {
 //            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(posActual, 10));
             if (posActual != null) {
-                googleMap.addMarker(new MarkerOptions().position(posActual).title("Posicion Actual"));
-                Log.d("mapa", "Ubicación obtenida 89: " + posActual);
+               // googleMap.addMarker(new MarkerOptions().position(posActual).title("Posicion Actual"));
+                googleMap.addMarker(new MarkerOptions()
+                        .position(posActual)
+                        .title("Posición Actual")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
             }
-            Log.d("mapa", "Ubicación obtenida 91: " + posActual);
             for (Farmacia farmacia : farmacias) {
                 LatLng pos = new LatLng(farmacia.getLat(), farmacia.getLon());
                 googleMap.addMarker(new MarkerOptions().position(pos).title(farmacia.getTitle()));
