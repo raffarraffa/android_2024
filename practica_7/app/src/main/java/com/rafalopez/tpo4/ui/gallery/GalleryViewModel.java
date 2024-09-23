@@ -24,7 +24,7 @@ public class GalleryViewModel extends AndroidViewModel {
     private  MutableLiveData<MapaActual> mMapaActual;
 
 
-    public GalleryViewModel(@NonNull Application application, ArrayList<Farmacia> farmacias) {
+    public GalleryViewModel(@NonNull Application application) {
         super(application);
 
     }
@@ -40,8 +40,7 @@ public class GalleryViewModel extends AndroidViewModel {
         mMapaActual.setValue(mapaActual);
     }
 
-    public class MapaActual implements OnMapReadyCallback {
-        ArrayList<Farmacia> farmacias = MainActivity.farmacias;
+    public class MapaActual2 implements OnMapReadyCallback{
         LatLng SANLUIS = new LatLng(-33.280576,-66.332482);
         LatLng ULP = new LatLng(-33.150720, -66.306864);
         @Override
@@ -50,16 +49,41 @@ public class GalleryViewModel extends AndroidViewModel {
 //           googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
             googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 //         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SANLUIS, 10));
-            CameraPosition cameraPosition =
-                    new CameraPosition.Builder()
-                            .target(SANLUIS)
-                            .zoom(19)
-                            .bearing(45)
-                            .tilt(90)
-                            .build();
-
-            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+//            CameraPosition cameraPosition =
+//                    new CameraPosition.Builder()
+//                            .target(SANLUIS)
+//                            .zoom(19)
+//                            .bearing(45)
+//                            .tilt(90)
+//                            .build();
+//
+//            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            googleMap.addMarker(new MarkerOptions().position(SANLUIS).title("San Luis"));
+            googleMap.addMarker(new MarkerOptions().position(ULP).title("Universidad de La Punta"));
+            //googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SANLUIS, 12));
+        }
+    }
+    public class MapaActual implements OnMapReadyCallback {
+        ArrayList<Farmacia> farmacias = MainActivity.farmacias;
+        LatLng SANLUIS = new LatLng(-33.280576,-66.332482);
+        //LatLng ULP = new LatLng(-33.150720, -66.306864);
+        @Override
+        public void onMapReady(@NonNull GoogleMap googleMap) {
+//           googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+//           googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+//         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SANLUIS, 10));
+//            CameraPosition cameraPosition =
+//                    new CameraPosition.Builder()
+//                            .target(SANLUIS)
+//                            .zoom(19)
+//                            .bearing(45)
+//                            .tilt(90)
+//                            .build();
+//
+//            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             for (Farmacia farmacia:farmacias) {
+
                 LatLng pos= new LatLng(farmacia.getLat() , farmacia.getLon());
                 googleMap.addMarker(new MarkerOptions().position(pos).title(farmacia.getTitle()));
                 }
