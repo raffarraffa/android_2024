@@ -10,7 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 
 public class MainActivityViewModel extends AndroidViewModel {
     private User usuario = new User("admin@admin.com", "1234");
-    //private MutableLiveData<Boolean> mutAuth ;
+    private MutableLiveData<Boolean> mutAuth ;
     private MutableLiveData<Boolean> mutExit ;
 
     public MainActivityViewModel(@NonNull Application application) {

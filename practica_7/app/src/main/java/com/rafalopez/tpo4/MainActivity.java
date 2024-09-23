@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         // instancio viewmodel
         mainViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainActivityViewModel.class);
 //        // observer del auth
-
+  /*
         mainViewModel.getAuth().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean authBoolean) {
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+   */
         // instancio binding
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         // cambiar el atributo de setContentView
